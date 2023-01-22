@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Navbar() {
+  const [navbar, setNavbar] = useState("false");
   return (
     <nav className="w-full bg-white shadow">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
@@ -12,9 +13,9 @@ function Navbar() {
             <div className="md:hidden">
               <button
                 className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
-                // onClick={() => setNavbar(!navbar)}
+                onClick={() => setNavbar(!navbar)}
               >
-                {/* {navbar ? (
+                {navbar ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-6 h-6"
@@ -42,16 +43,16 @@ function Navbar() {
                       d="M4 6h16M4 12h16M4 18h16"
                     />
                   </svg>
-                )} */}
+                )}
               </button>
             </div>
           </div>
         </div>
         <div>
           <div
-          // className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-          //   navbar ? "block" : "hidden"
-          // }`}
+            className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+              navbar ? "block" : "hidden"
+            }`}
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
               <li className="text-gray-600 hover:text-blue-600">
